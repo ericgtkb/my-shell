@@ -1,0 +1,57 @@
+# Common for all shells
+
+# History
+HISTFILE="$HOME/.shell_history"
+HISTSIZE=1000000
+HISTFILESIZE=1000000  # For bash (ignored by zsh)
+SAVEHIST=1000000  # For zsh (ignored by bash)
+
+# Editor
+if command -v nvim >/dev/null 2>&1; then
+  EDITOR=nvim
+elif command -v vim >/dev/null 2>&1; then
+  EDITOR=vim
+else
+  EDITOR=vi
+fi
+
+VISUAL="$EDITOR"
+export EDITOR VISUAL
+
+# Paths
+if [[ -d "$HOME/.local/bin" ]]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Languages specifics
+
+# Python (uv)
+if [[ -r "$HOME/.local/bin/env" ]]; then
+  . "$HOME/.local/bin/env"
+fi
+
+# Go
+if [[ -d "$HOME/go/bin" ]]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
+
+if [[ -d "/usr/local/go/bin" ]]; then
+  PATH="/usr/local/go/bin:$PATH"
+fi
+
+# Rust (cargo)
+if [[ -r "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
+
+export PATH
+
+### 5. Aliases
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# kubectl alias if installed
+if command -v kubectl >/dev/null 2>&1; then
+  alias k='kubectl'
+fi
