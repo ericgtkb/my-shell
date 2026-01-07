@@ -25,7 +25,7 @@ fi
 
 # Prompt
 # user@host
-PROMPT=" %{$fg_bold[white]%}%n%{$fg[blue]%}@%{$fg_bold[yellow]%}%m"
+PROMPT="%{$fg_bold[white]%}%n%{$fg[blue]%}@%{$fg_bold[yellow]%}%m"
 # arrow
 PROMPT+=" %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 # dir
