@@ -29,8 +29,8 @@ PROMPT=" %{$fg_bold[white]%}%n%{$fg[blue]%}@%{$fg_bold[yellow]%}%m"
 # arrow
 PROMPT+=" %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 # dir
-PROMPT+="%{$fg[cyan]%}%d%{$reset_color%}"
+PROMPT+="%{$fg[cyan]%}%~%{$reset_color%}"
 # git
 PROMPT+=' $(git_prompt_info)'
 # dollar sign
-PROMPT+="%{$fg_bold[white]%}$%{$reset_color%} "
+PROMPT+="%{$fg_bold[green]%}$%{$reset_color%} "
