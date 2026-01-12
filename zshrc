@@ -9,6 +9,13 @@
 
 # vim mode
 bindkey -v
+# History search in vim mode
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+# Note when a search is found type esc then n/N to navigate results
+# This is different from bash where the search is just like vim
+bindkey -M vicmd "n" vi-repeat-search
+bindkey -M vicmd "N" vi-rev-repeat-search
 
 # Initialize autocomplete, but only if not already initialized
 if ! (compinit -C); then
